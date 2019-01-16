@@ -1,27 +1,28 @@
-# TestWebComponent
+# Fundamental-ngx Web Component Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+This repository is intended as a guide to people looking to convert Fundamental-ngx components to Web Components. It transforms the Badge and Label components. A step-by-step guide follows in this file. A working example is in the dist folder. Open the index.html file to see it.
 
-## Development server
+### Initial Steps
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Make sure your components are inside your application.
+2. Add your components to the entryComponents in the root module.
+3. Define the web components in the constructor of the AppModule, as shown in the app.module.ts file.
 
-## Code scaffolding
+### Preparing the Files
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. main.ts should be overwritten with the contents of the one in this app.
+2. While it is possible to use the artifacts created by Angular to import the components, it is easier to compile them into one script. This project uses Gulp, but a Node script would work just as well.
+3. The command `npm run package` will create elements.js and elements.css, which can then be used inside any HTML application.
 
-## Build
+### Inside the HTML
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+There are a number of bugs or sketchy aspects of Angular Elements which may frustrate you in your conversion attempts. Two of these can be solved by adding the following scripts to the body tag.
 
-## Running unit tests
+`<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.3/custom-elements-es5-adapter.js"></script>`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`<script type="text/javascript" src="https://unpkg.com/zone.js"></script>`
 
-## Running end-to-end tests
+The first script solves an issue that causes the component to fail when compiled with es5 as a target. The second script imports Zone.js, which may or may not be required for your component so I suggest you try it yourself.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Please post any questions/concerns/requests to the Fundamental-ngx issues.**

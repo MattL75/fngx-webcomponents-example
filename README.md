@@ -6,11 +6,11 @@ This repository is intended as a guide to people looking to convert Fundamental-
 
 1. Make sure your components are inside your application.
 2. Add your components to the entryComponents in the root module.
-3. Define the web components in the constructor of the AppModule, as shown in the app.module.ts file.
+3. Define the web components in the constructor of the AppModule, as shown in the `app.module.ts` file.
 
 ### Preparing the Files
 
-1. main.ts should be overwritten with the contents of the one in this app.
+1. `main.ts` should be overwritten with the contents of the one in this app.
 2. While it is possible to use the artifacts created by Angular to import the components, it is easier to compile them into one script. This project uses Gulp, but a Node script would work just as well.
 3. The command `npm run package` will create elements.js and elements.css, which can then be used inside any HTML application.
 

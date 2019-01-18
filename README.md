@@ -1,6 +1,6 @@
 # Fundamental-ngx Web Component Example
 
-This repository is intended as a guide to people looking to convert Fundamental-ngx components to Web Components. It transforms the Badge and Label components. A step-by-step guide follows in this file. A working example is in the dist folder. Open the index.html file to see it.
+This repository is intended as a guide to people looking to convert Fundamental-ngx components to Web Components. It transforms the Badge, Label and Datepicker components. A step-by-step guide follows in this file. A working example is in the dist folder. Open the index.html file to see it.
 
 ### Initial Steps
 
